@@ -4,7 +4,7 @@
     "beforeBuildCommand": "pnpm build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
-    "withGlobalTauri": false
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "video-explorer",
@@ -47,8 +47,9 @@
         "fullscreen": false,
         "resizable": true,
         "title": "video-explorer",
-        "width": 800,
-        "height": 600
+        "width": 1920,
+        "height": 1080,
+        "maximized": true
       }
     ]
   }

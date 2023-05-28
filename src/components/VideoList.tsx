@@ -18,7 +18,7 @@ function VideoList() {
       {
         video
           ? video.map((item) => {
-            return (<VideoItem key={item.name} name={item.name} />);
+            return (<VideoItem key={item.name} name={item.name} path={item.path} />);
           })
           : <h1>Loading...</h1>
       }
