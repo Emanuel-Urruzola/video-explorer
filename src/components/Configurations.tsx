@@ -1,6 +1,11 @@
-import { useEffect } from 'react'
+import { usePrimarycolor } from '../hooks/usePrimarycolor'
+import { useConfigurationsColor } from '../hooks/useConfigurationsColor'
+import { useTamanio } from '../hooks/useTamanio'
 
 function Configurations() {
+  const { primaryColor, handleColorChange } = usePrimarycolor()
+  const { secondaryColor, handleSColorChange } = useConfigurationsColor()
+  const { tamanio, handleTamanio } = useTamanio()
   return (
     <aside>
       <h1>Configuraciones</h1>
@@ -26,15 +31,40 @@ function Configurations() {
       </div>
       <div className="buscador">
         <label htmlFor="buscador">Buscar: </label>
-        <input type="text" name="buscador" id="buscador" placeholder="Cardio" />
+        <input
+          type="text"
+          name="buscador"
+          id="buscador"
+          placeholder="Cardio" />
+      </div>
+      <div className="tamanio">
+        <label htmlFor="tamanio">Tamaño</label>
+        <input
+          type="range"
+          name="tamanio"
+          id="tamanio"
+          min={40}
+          max={80}
+          value={tamanio}
+          onChange={handleTamanio} />
       </div>
       <div className="color">
         <label htmlFor="colorPrincipal">Color principal</label>
-        <input type="color" name="colorPrincipal" id="colorPrincipal" />
+        <input
+          type="color"
+          name="colorPrincipal"
+          id="colorPrincipal"
+          onChange={handleColorChange}
+          value={primaryColor} />
       </div>
       <div className="color">
-        <label htmlFor="colorPrincipal">Color configuracion</label>
-        <input type="color" name="colorPrincipal" id="colorPrincipal" />
+        <label htmlFor="colorSecundario">Color configuracion</label>
+        <input
+          type="color"
+          name="colorSecundario"
+          id="colorSecundario"
+          onChange={handleSColorChange}
+          value={secondaryColor} />
       </div>
     </aside>
   )
