@@ -1,6 +1,9 @@
 import { invoke } from '@tauri-apps/api/tauri';
-
-const seeVideo = (video) => {
+interface VideoItemProps {
+  name: String,
+  path: String
+}
+const seeVideo = (video: String) => {
   invoke('run_node_script', { videoPath: video })
     .then(response => {
       console.log('Archivo ejecutado:', response);
@@ -9,10 +12,14 @@ const seeVideo = (video) => {
       console.error('Error al ejecutar archivo:', error);
     });
 }
-function VideoItem({ name, path }) {
+function VideoItem({ name, path }: VideoItemProps) {
   return (
     <article onClick={() => { seeVideo(path) }}>
-      <img src={`src/thumbnails/${name.slice(0, - 3)}png`} alt="video de entrenamiento" />
+      <img src={
+        process.env.TAURI_DEV
+          ? `public/thumbnails/${name.slice(0, - 3)}png`
+          : `/thumbnails/${name.slice(0, - 3)}png`}
+        alt="video de entrenamiento" />
       <strong>{name}</strong>
     </article>
   )

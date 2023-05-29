@@ -1,7 +1,7 @@
 import { readDir } from '@tauri-apps/api/fs'
 import { desktopDir } from '@tauri-apps/api/path'
 
-export const holaMundo = async () => {
+export const getVideos = async () => {
   let directories = {}
   try {
     const desktopPath = await desktopDir()
