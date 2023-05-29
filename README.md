@@ -5,7 +5,7 @@ Para este proyecto se usaron las tecnologías:
 * React
 
 Este repositorio está pensado para uso personal y, por lo tanto, no esta configurado para un uso mas general.
-Este es un programa que muestra los videos en una carpeta, en un tamaño más grande para que se puedan ver las miniaturas con mayor facilidad.
+Este es un programa que muestra los videos en una carpeta, en un tamaño más grande para que se puedan ver las miniaturas con mayor facilidad. Al hacer click en cualquiera de ellos los ejecuta con vlc.
 
 ![Screenshot](/readme-image/Screenshot-_880_.webp)
 
