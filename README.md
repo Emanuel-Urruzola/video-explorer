@@ -21,7 +21,7 @@ Color configuración: Modifica el color de fondo del aside. Por defecto `#fa8072
 
 ### Revisar:
 El método `readDir` de `@tauri-apps/api/fs` , lee los archivos en un carpeta y por cada uno devuelve un objeto del tipo:
-```json
+```javascript
 {
 	name: "Nombre-del-archivo.extension",
 	path: "Ruta-absoluta-del-archivo/Nombre-del-archivo.extension"
